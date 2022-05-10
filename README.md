@@ -16,4 +16,15 @@ The pre-trained facial landmark detector inside the dlib library is used to esti
 
 The indexes of the 68 coordinates can be visualized on the image below:
 
-![This is an image]()
+<img src="facial_landmarks_68markup.jpg" width="500">
+
+The facial landmark detector model can be downloaded [here](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2).
+
+Once we have the model, we:
+1. Iterate through the frames in the video stream
+2. Run the face detector on each frame to capture the face(s) within it
+3. Run the facial landmark detector model on each of the detected faces
+4. Compute the ratio of the distances between the coordinates 1 and 29, and 17 and 29. If this ratio is lesser than a certain threshold, we identify the frame under consideration as one where a left/right head turn has been observed. 
+
+
+For a head turn to be recorded, we need to observe more than a minimum threshold of consecutive frames over which a turn has been recorded.
