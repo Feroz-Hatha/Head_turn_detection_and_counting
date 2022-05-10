@@ -27,4 +27,4 @@ Once we have the model, we:
 4. Compute the ratio of the distances between the coordinates 1 and 29, and 17 and 29. If this ratio is lesser than a certain threshold, we identify the frame under consideration as one where a left/right head turn has been observed. 
 
 
-For a head turn to be recorded, we need to observe more than a minimum threshold of consecutive frames over which a turn has been recorded.
+For a head turn to be recorded, we need to observe more than a minimum threshold of consecutive frames over which a turn has been recorded. Finally, we use OpenCV to draw/write on the video stream the number of left/right head turns observed as time progresses.
